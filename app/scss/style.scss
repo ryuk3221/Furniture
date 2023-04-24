@@ -1,0 +1,362 @@
+@import '_fonts';
+@import '_reset';
+@import '../../node_modules/fancybox/jquery.fancybox.min.scss';
+//-------VARS-------
+$bg: #373737;
+$default: #696161;
+
+%roboto-300 {
+  font-family: 'Roboto-Light', sans-serif;
+  font-weight: 300;
+}
+%roboto-400 {
+  font-family: 'Roboto-Regular', sans-serif;
+  font-weight: 400;
+}
+%roboto-500 {
+  font-family: 'Roboto-Medium', sans-serif;
+  font-weight: 500;
+}
+%roboto-700 {
+  font-family: 'Roboto-Bold', sans-serif;
+  font-weight: 700;
+}
+%revalia-400 {
+  font-family: 'Revalia-Regular', sans-serif;
+  font-weight: 400;
+}
+
+%btn {
+  background-color: $bg;
+  padding: 13px 17px;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+%btn-small {
+  background-color: $bg;
+  padding: 8px 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
+%title {
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 15px;
+}
+
+%subtitle {
+  @extend %roboto-300;
+  font-size: 20px;
+  line-height: 23px;
+  color: #373737;
+  padding-left: 76px;
+}
+.subtitle {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: #373737;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-1px)
+  }
+}
+//-------VARS-------
+
+
+
+@import '_global';
+
+
+.header-top {
+  display: flex;
+  padding: 23px 0;
+  align-items: center;
+  font-size: 18px;
+  line-height: 21px;
+  &__logo-link {
+    margin-right: auto;
+  }
+  &__btn {
+    @extend %btn;
+    margin-right: 56px;
+    border: none;
+  }
+  &__search-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent; 
+    cursor: pointer;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 44px;
+  margin-right: 35px;
+}
+
+
+.header-content {
+  background-image: url('../images/header-bg.jpg');
+  height: calc(100vh - 93px);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__inner{
+    display: flex;
+    align-items: center;
+    padding-top: 200px;
+    gap: 478px;
+  }
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  &__text-box {
+    max-width: 500px;
+    text-align: center;
+  }
+  &__title {
+    @extend %revalia-400;
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom: 25px;
+  }
+  &__text {
+    max-width: 412px;
+    color: #fff;
+    line-height: 23px;
+    margin: 0 auto 30px;
+  }
+  &__social-icon {
+    width: 30px
+  }
+}
+
+.facebook {
+  width: 16px;
+}
+
+.benefits {
+  &__inner {
+    display: flex;
+    padding: 37px 0 156px;
+    max-width: 609px;
+    margin: 0 auto;
+    gap: 80px;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+  &__head{
+    @extend %roboto-700;
+    font-size: 40px;
+    line-height: 47px;
+  }
+  &__box {
+    display: flex;
+    gap: 10px;
+  }
+  &__review-icon {
+    width: 20px;
+  }
+}
+
+.about {
+  padding-bottom: 120px;
+  &__title {
+    @extend %title;
+  }
+  &__subtitle {
+    @extend %subtitle;
+  }
+  &__inner {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    padding-top: 45px;
+  }
+  &__img-box {
+    max-width: 606px;
+    img {
+      width: 100%;
+    }
+  }
+  &__content {
+    max-width: 663px;
+    @extend %roboto-300;
+    color: $bg;
+  }
+  &__text {
+    max-width: 663px;
+  }
+  &__btn {
+    @extend %btn;
+    margin-top: 30px;
+  }
+  &__partners{
+    display: flex;
+    gap: 105px;
+    padding-top: 60px;
+  }
+}
+
+.services {
+  padding-bottom: 120px;
+  &__title {
+    @extend %title;
+  }
+  &__subtitle {
+    @extend %subtitle;
+    max-width: 430px;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+  }
+  &__item {
+    max-width: 366px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 57px 12px 12px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+    img {
+      width: 75px;
+      margin-bottom: 15px;
+    }
+  }
+  &__item-title {
+    margin-bottom: 10px;
+    line-height: 23px;
+  }
+
+  &__item-text {
+    @extend %roboto-300;
+    max-width: 297px;
+    color: $default;
+  }
+}
+
+.catalog{
+  padding-bottom: 120px;
+  &__title {
+    @extend %title;
+    text-align: center;
+  }
+  &__subtitle {
+    @extend %roboto-300;
+    max-width: 400px;
+    color: $bg;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__head {
+    padding-top: 45px;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__search-box {
+    display: flex;
+    max-width: 267px;
+    border-radius: 5px;
+  }
+  &__search-input {
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #EFEFEF;
+    outline: none;
+    height: 50px;
+    padding: 16px;
+    color: #686868;
+    width: calc(267px - 50px);
+  }
+  &__search-btn {
+    background-color: $bg;
+    border: none;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__filter-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: #686868;
+  }
+  &__filters{
+    display: flex;
+    gap: 30px;
+  }
+  &__inner {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  &__item {
+    max-width: 267px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 5px 5px 10px 5px;
+    background: #F9F9F9;
+    box-shadow: 8px 8px 20px rgba(39, 39, 43, 0.1);
+  }
+  &__img-box {
+    max-width: 257px;
+    margin-bottom: 10px;
+    img{
+      width: 100%;
+    }
+  }
+  &__item-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+  &__item-text {
+    padding: 0 5px;
+    @extend %roboto-300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #696161;
+    margin-bottom: 13px;
+  }
+  &__item-btn {
+    display: block;
+    @extend %btn-small;
+    border: none;
+    width: 101px;
+    font-size: 16px;
+    line-height: 24px;
+    margin-left: 5px;
+    border-radius: 5px; 
+  }
+}
+
+.mixitup-control-active {
+  color: #000;
+}
+
+@import '_media';
