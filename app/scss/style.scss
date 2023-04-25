@@ -1,6 +1,9 @@
 @import '_fonts';
 @import '_reset';
-@import '../../node_modules/fancybox/jquery.fancybox.min.scss';
+@import '../../node_modules/rateyo/jquery.rateyo.scss';
+@import '../../fancy/jquery.fancybox.min.scss';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+
 //-------VARS-------
 $bg: #373737;
 $default: #696161;
@@ -309,9 +312,11 @@ $default: #696161;
     gap: 30px;
   }
   &__inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     gap: 30px;
     flex-wrap: wrap;
+    padding-bottom: 50px;
   }
   &__item {
     max-width: 267px;
@@ -321,6 +326,12 @@ $default: #696161;
     padding: 5px 5px 10px 5px;
     background: #F9F9F9;
     box-shadow: 8px 8px 20px rgba(39, 39, 43, 0.1);
+    &--hide {
+      display: none;
+    }
+    &--show {
+      display: block;
+    }
   }
   &__img-box {
     max-width: 257px;
@@ -341,7 +352,7 @@ $default: #696161;
     font-size: 16px;
     line-height: 24px;
     color: #696161;
-    margin-bottom: 13px;
+    margin-bottom: auto;
   }
   &__item-btn {
     display: block;
@@ -352,11 +363,185 @@ $default: #696161;
     line-height: 24px;
     margin-left: 5px;
     border-radius: 5px; 
+    margin-top: 13px;
+  }
+  &__btn {
+    @extend %btn;
+    display: block;
+    width: 105px;
+    margin: 0 auto;
   }
 }
 
 .mixitup-control-active {
   color: #000;
+}
+
+.reviews{
+  padding-bottom: 122px;
+  .jq-ry-container {
+    padding: 0;
+  }
+  &__inner {
+    max-width: 100%;
+  }
+  &__title {
+    @extend %title;
+  }
+  &__subtitle {
+    @extend %subtitle;
+    max-width: 430px;
+    margin-bottom: 45px;
+  }
+  &__item {
+    margin: 0;
+    
+  }
+  &__item-inner {
+    max-width: 564px;
+    display: flex;
+    background-color: #f9f9f9;
+    gap: 25px;
+    padding: 5px 25px 5px 5px;
+    border-radius: 5px;
+    &__img-box {
+      max-width: 163px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &__item-content {
+    padding: 10px 0;
+    @extend %roboto-300;
+    color: #696161;
+    font-size: 16px;
+    line-height: 30px;
+  }
+  &__item-title {
+    @extend %roboto-400;
+    color: $bg;
+    font-size: 20px;
+  }
+  &__item-date{
+    padding-left: 10px;
+    margin-bottom: 10px;
+  }
+  &__item-text {
+    span {
+      color: #F6DE00;
+    }
+  }
+  .slick-arrow {
+    position: absolute;
+    z-index: 10000;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .slick-prev {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%)
+  }
+  .slick-next {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%)
+  }
+}
+
+.footer {
+  padding: 80px 0;
+  background-color: $bg;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    color: #fff;
+  }
+  &__logo-link {
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+  &__contact-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  &__social{
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  &__item-title {
+    @extend %roboto-500;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 30px;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__menu-item {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__faq{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__faq-item{
+    font-size: 14px;
+    line-height: 16px;
+  }
+  &__form {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 30px;
+    input {
+      width: 171px;
+      height: 40px;
+      padding: 12px;
+      font-size: 14px;
+      line-height: 16px;
+      @extend %roboto-300;
+      color: $bg;
+      outline: none;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      padding: 12px;
+      background-color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      line-height: 16px;
+      @extend %roboto-300;
+      color: $bg;
+      cursor: pointer;
+    }
+  }
+  &__btn {
+    @extend %roboto-700;
+    font-size: 18px;
+    line-height: 21px;
+    color: $bg;
+    padding: 9px 27px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer; 
+  }
 }
 
 @import '_media';
