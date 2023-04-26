@@ -12,20 +12,26 @@
   <header class="header">
     <div class="container-one">
       <div class="header-top">
+        
         <a href="" class="header-top__logo-link">
           <img class="header-top__logo-img" src="images/logo.svg" alt="">
         </a>
-        <nav class="header-top__nav">
-          <ul class="menu">
-            <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Service</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Furniture</a></li>
-          </ul>
-        </nav>
-        <button class="header-top__btn">Order Now</button>
+        <div class="header-top__box">
+          <nav class="header-top__nav">
+            <ul class="menu">
+              <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+              <li class="menu__item"><a class="menu__link" href="#about">About</a></li>
+              <li class="menu__item"><a class="menu__link" href="#service">Service</a></li>
+              <li class="menu__item"><a class="menu__link" href="#catalog">Furniture</a></li>
+            </ul>
+          </nav>
+          <button class="header-top__btn">Order Now</button>
+        </div>
         <button class="header-top__search-btn">
           <img class="header-top__search-icon" src="images/search.svg" alt="">
+        </button>
+        <button class="header-top__burger" id="burger">
+          <span class="burger-span1"></span><span class="burger-span2"></span><span class="burger-span3"></span>
         </button>
       </div>
     </div>
@@ -48,7 +54,7 @@
             <p class="header-content__text">
               If you are looking for a furniture then you have come to the right place.
             </p>
-            <button class="header-content__btn header-top__btn">Order Now</button>
+            <button class="header-top__btn header-content__btn">Order Now</button>
           </div>
         </div>
       </div>
@@ -75,7 +81,7 @@
         </div>
       </div>
     </div>
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <h1 class="about__title">Learn about us</h1>
         <h4 class="about__subtitle subtitle">It’s short title here</h4>
@@ -83,7 +89,7 @@
       <div class="container-one">
         <div class="about__inner">
           <div class="about__img-box">
-            <img class="about__img" src="images/about-img.jpg" alt="">
+            <a href="images/about-img.jpg" data-fancybox><img class="about__img" src="images/about-img.jpg" alt=""></a>
           </div>
           <div class="about__content">
             <p class="about__text">
@@ -105,7 +111,7 @@
         </div>
       </div>
     </section>
-    <section class="services">
+    <section class="services" id="service">
       <div class="container">
         <h1 class="services__title">We provide that service</h1>
         <h4 class="services__subtitle subtitle">It is a long established fact that a reader will be distracted by the service.</h4>
@@ -134,7 +140,7 @@
         </div>
       </div>
     </section>
-    <section class="catalog">
+    <section class="catalog" id="catalog">
       <div class="container">
         <h1 class="catalog__title">Our Furniture</h1>
         <h4 class="catalog__subtitle">It is a long established fact that a reader will be distracted by the service.</h4>
@@ -143,17 +149,20 @@
             <input class="catalog__search-input" placeholder="Search a furniture" type="text">
             <button class="catalog__search-btn"><img class="catalog__serach-icon" src="images/catalog-search.svg" alt=""></button>
           </div>
-          <div class="catalog__filters">
-            <button class="catalog__filter-btn" data-filter="all">All</button>
-            <button class="catalog__filter-btn" data-filter=".chair">Chair</button>
-            <button class="catalog__filter-btn" data-filter=".table">Table</button>
-            <button class="catalog__filter-btn" data-filter=".bed">Bed</button>
-            <button class="catalog__filter-btn" data-filter=".sofa">Sofa</button>
-            <button class="catalog__filter-btn" data-filter=".wardrobe">Wardrobe</button>
-            <button class="catalog__filter-btn" data-filter=".almirah">Almirah</button>
-            <button class="catalog__filter-btn" data-filter=".dimple">Dimple</button>
-            <button class="catalog__filter-btn" data-filter=".rack">Rack</button>
-            <button class="catalog__filter-btn" data-filter=".stand">Stand</button>
+          <div class="swiper">
+            <div class="catalog__filters swiper-wrapper">
+              <button class="catalog__filter-btn swiper-slide" data-filter="all">All</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".chair">Chair</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".table">Table</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".bed">Bed</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".sofa">Sofa</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".wardrobe">Wardrobe</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".almirah">Almirah</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".dimple">Dimple</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".rack">Rack</button>
+              <button class="catalog__filter-btn swiper-slide" data-filter=".stand">Stand</button>
+            </div>
+            <div class="swiper-scrollbar"></div>
           </div>
         </div>
         <div class="catalog__inner">
@@ -286,69 +295,7 @@
             <button class="catalog__item-btn">Order Now</button>
           </div>
 
-          <div class="catalog__item catalog__item--hide mix bed">
-            <a href="images/item1.jpg" data-fancybox="gallary1">
-              <div class="catalog__img-box">
-                <img class="catalog__item-img" src="images/item1.jpg" alt="">
-              </div>
-            </a>
-            <div class="catalog__item-head">
-              <h6 class="catalog__item-title">Furniture Name</h6>
-              <span class="catalog__item-price">$ 250</span>
-            </div>
-            <p class="catalog__item-text">
-              It is a long estiabs lished fact that a reader will be the service.a reader will be the service.a reader will be the service.
-            </p>
-            <button class="catalog__item-btn">Order Now</button>
-          </div>
 
-          <div class="catalog__item catalog__item--hide mix sofa">
-            <a href="images/item2.jpg" data-fancybox="gallary1">
-              <div class="catalog__img-box">
-                <img class="catalog__item-img" src="images/item2.jpg" alt="">
-              </div>
-            </a>
-            <div class="catalog__item-head">
-              <h6 class="catalog__item-title">Furniture Name</h6>
-              <span class="catalog__item-price">$ 250</span>
-            </div>
-            <p class="catalog__item-text">
-              It is a long estiabs lished fact that a reader will be the service.a reader will be the service.a reader will be the service.
-            </p>
-            <button class="catalog__item-btn">Order Now</button>
-          </div>
-
-          <div class="catalog__item catalog__item--hide mix almirah">
-            <a href="images/item3.jpg" data-fancybox="gallary1">
-              <div class="catalog__img-box">
-                <img class="catalog__item-img" src="images/item3.jpg" alt="">
-              </div>
-            </a>
-            <div class="catalog__item-head">
-              <h6 class="catalog__item-title">Furniture Name</h6>
-              <span class="catalog__item-price">$ 250</span>
-            </div>
-            <p class="catalog__item-text">
-              It is a long estiabs lished fact that a reader will be the service.a reader will be the service.a reader will be the service.
-            </p>
-            <button class="catalog__item-btn">Order Now</button>
-          </div>
-
-          <div class="catalog__item catalog__item--hide mix dimple">
-            <a href="images/item4.png" data-fancybox="gallary1">
-              <div class="catalog__img-box">
-                <img class="catalog__item-img" src="images/item4.png" alt="">
-              </div>
-            </a>
-            <div class="catalog__item-head">
-              <h6 class="catalog__item-title">Furniture Name</h6>
-              <span class="catalog__item-price">$ 250</span>
-            </div>
-            <p class="catalog__item-text">
-              It is a long estiabs lished fact that a reader will be the service.a reader will be the service.a reader will be the service.
-            </p>
-            <button class="catalog__item-btn">Order Now</button>
-          </div>
 
           
 
@@ -499,7 +446,7 @@
 
       </div>
     </div>
-  </footer>
+  </footer> 
   
   <script src="js/main.min.js"></script>
 </body>

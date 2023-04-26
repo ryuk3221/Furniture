@@ -4,6 +4,11 @@
 @import '../../fancy/jquery.fancybox.min.scss';
 @import '../../node_modules/slick-carousel/slick/slick.scss';
 
+:root {
+  scroll-behavior: smooth;
+}
+
+
 //-------VARS-------
 $bg: #373737;
 $default: #696161;
@@ -58,6 +63,7 @@ $default: #696161;
   padding-left: 76px;
 }
 .subtitle {
+  z-index: -1;
   position: relative;
   &::before {
     position: absolute;
@@ -76,6 +82,16 @@ $default: #696161;
 
 @import '_global';
 
+.burger-span1--active{
+  transform: translateY(18px) rotate(45deg);
+}
+
+.burger-span2--active{
+  transform: translateY(-18px) rotate(-45deg);
+}
+
+
+
 
 .header-top {
   display: flex;
@@ -83,6 +99,36 @@ $default: #696161;
   align-items: center;
   font-size: 18px;
   line-height: 21px;
+  &__burger{
+    height: 40px;
+    width: 40px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: none;
+    .burger-span1, .burger-span2, .burger-span3 {
+      width: 40px;
+      height: 4px;
+      background-color: #373737;
+      position: absolute;
+      transition: .2s;
+      &:nth-child(1){
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        top:50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+      &:nth-child(3) {
+        bottom: 0;
+        left: 0;
+      }
+    }
+    
+  }
   &__logo-link {
     margin-right: auto;
   }
@@ -96,6 +142,10 @@ $default: #696161;
     border: none;
     background-color: transparent; 
     cursor: pointer;
+  }
+  &__box {
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -152,7 +202,7 @@ $default: #696161;
 .benefits {
   &__inner {
     display: flex;
-    padding: 37px 0 156px;
+    padding: 37px 0 0px;
     max-width: 609px;
     margin: 0 auto;
     gap: 80px;
@@ -178,7 +228,7 @@ $default: #696161;
 }
 
 .about {
-  padding-bottom: 120px;
+  padding-top: 100px;
   &__title {
     @extend %title;
   }
@@ -211,13 +261,13 @@ $default: #696161;
   }
   &__partners{
     display: flex;
-    gap: 105px;
+    justify-content: space-between;
     padding-top: 60px;
   }
 }
 
 .services {
-  padding-bottom: 120px;
+  padding-top: 120px;
   &__title {
     @extend %title;
   }
@@ -256,6 +306,17 @@ $default: #696161;
 
 .catalog{
   padding-bottom: 120px;
+  padding-top: 120px;
+  .swiper {
+    max-width: 775px;
+  }
+  .swiper-wrapper{
+    max-width: 775px;
+    padding-bottom: 10px;
+  }
+  .swiper-scrollbar-horizontal {
+    top: 35px;
+  }
   &__title {
     @extend %title;
     text-align: center;
@@ -326,12 +387,15 @@ $default: #696161;
     padding: 5px 5px 10px 5px;
     background: #F9F9F9;
     box-shadow: 8px 8px 20px rgba(39, 39, 43, 0.1);
-    &--hide {
-      display: none;
-    }
-    &--show {
-      display: block;
-    }
+    // &--hide {
+    //   opacity: 0;
+    //   visibility: hidden;
+    //   transform: scale(0);
+    // }
+    // &--show {
+    //   opacity: 1;
+    //   visibility: visible;
+    // }
   }
   &__img-box {
     max-width: 257px;

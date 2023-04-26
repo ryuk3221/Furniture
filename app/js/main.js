@@ -14,12 +14,66 @@ $(function(){
     slidesToShow: 2,
     prevArrow: '<button type="button" class="slick-prev"><img src="images/arrow-prev.png"></button>',
     nextArrow: '<button type="button" class="slick-next"><img src="images/arrow-next.png"></button>',
-
+    responsive: [
+      {
+        breakpoint: 1250,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   })
 })
 
-document.querySelector('.catalog__btn').onclick = function() {
-  document.querySelectorAll('.catalog__item--hide').forEach(function(el){
-    el.classList.toggle('catalog__item--show');
-  })
+
+
+let x = true;
+
+document.querySelector('#burger').onclick = function() {
+  document.querySelector('.burger-span1').classList.toggle('burger-span1--active');
+  document.querySelector('.burger-span3').classList.toggle('burger-span2--active');
+  if (x === true) {
+    document.querySelector('.burger-span2').style.width = '0';
+    document.querySelector('.header-top__box').style.transform = 'translateX(0)';
+    x = false;
+  }
+  else {
+    document.querySelector('.burger-span2').style.width = '40px';
+    document.querySelector('.header-top__box').style.transform = 'translateX(-100%)';
+    x = true; 
+  }
 }
+
+document.querySelectorAll('.menu__link').forEach(function(el) {
+  el.onclick = function() {
+    document.querySelector('.burger-span2').style.width = '40px';
+    document.querySelector('.burger-span1').classList.toggle('burger-span1--active');
+    document.querySelector('.burger-span3').classList.toggle('burger-span2--active');
+    document.querySelector('.header-top__box').style.transform = 'translateX(-100%)';
+    x = true;
+  }
+})
+
+const swiper = new Swiper('.swiper', {
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  slidesPerView: 6,
+  freeMode: true,
+  mousewheel: true,
+  breakpoints: {
+    320: {
+      slidesPerView: 3,
+    },
+    475: {
+      slidesPerView: 4,
+    },
+    768: {
+      slidesPerView: 6,
+    },
+    // 1024: {
+    //   slidesPerView: 5,
+    //   spaceBetween: 50,
+    // },
+  },
+})
