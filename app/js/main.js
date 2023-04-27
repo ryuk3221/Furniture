@@ -46,13 +46,35 @@ document.querySelector('#burger').onclick = function() {
 
 document.querySelectorAll('.menu__link').forEach(function(el) {
   el.onclick = function() {
-    document.querySelector('.burger-span2').style.width = '40px';
-    document.querySelector('.burger-span1').classList.toggle('burger-span1--active');
-    document.querySelector('.burger-span3').classList.toggle('burger-span2--active');
-    document.querySelector('.header-top__box').style.transform = 'translateX(-100%)';
+    if (window.innerWidth <= 768) {
+      document.querySelector('.header-top__box').style.transform = 'translateX(-100%)';
+      document.querySelector('.burger-span2').style.width = '40px';
+      document.querySelector('.burger-span1').classList.toggle('burger-span1--active');
+      document.querySelector('.burger-span3').classList.toggle('burger-span2--active');
+    }
     x = true;
   }
-})
+});
+
+let lastScroll = 0;
+const header = document.querySelector('.header');
+
+const scrollPosition = () => window.pageYOffset;
+const containHide = () => header.classList.contains('header--hide');
+
+window.addEventListener('scroll', () => {
+  
+  let top = scrollPosition();
+  if (top > lastScroll && !header.classList.contains('header--hide')) {
+    //scroll down
+    header.classList.add('header--hide');
+  }
+  else if (top < lastScroll && header.classList.contains('header--hide')) {
+    header.classList.remove('header--hide');
+    //scroll up
+  }
+  lastScroll = scrollPosition();
+});
 
 const swiper = new Swiper('.swiper', {
   scrollbar: {

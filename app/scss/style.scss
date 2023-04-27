@@ -91,7 +91,21 @@ $default: #696161;
 }
 
 
+.header--hide {
+  transform: translateY(-100%);
+}
 
+.header {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #fff;
+    z-index: 2;
+    transition: .4s;
+}
 
 .header-top {
   display: flex;
